@@ -1,0 +1,197 @@
+$dark-gray: #8d8b8b;
+$light-gray: #f8f4f4;
+$base-gray: #dedada;
+$shadow-gray: #e6e6e6;
+$border-gray: rgba(0, 0, 0, 0.2);
+
+.container {
+  text-align: center;
+
+  & h1 {
+    color: $base-gray;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  & table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+
+    tr {
+      border-top: 1px solid $base-gray;
+      width: 100%;
+
+      & input {
+        border: 1px solid $base-gray;
+        padding: 10px;
+
+        &:focus {
+          border: 1px solid $base-gray;
+          outline: none;
+        }
+      }
+
+      & div {
+        display: flex;
+        justify-content: space-between;
+
+        & p {
+          margin: 0;
+        }
+
+        & .close {
+          font-weight: bold;
+          font-size: 20px;
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          & .close {
+            opacity: 1;
+          }
+        }
+      }
+
+      & td {
+        padding: 10px 30px;
+      }
+    }
+  }
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+
+  & .card {
+    border-top: 10px solid $dark-gray;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    & .box {
+      width: 100%;
+      padding: 15px 30px;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 15px;
+        color: $dark-gray;
+      }
+    }
+  }
+
+  & .subCard {
+    width: 69.5%;
+    height: 5px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  }
+
+  & .filters {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $base-gray;
+    background-color: $light-gray;
+    height: 30px;
+    width: 69%;
+    padding: 5px;
+    color: $dark-gray;
+    font-size: 13px;
+    border-top: none;
+
+    & button {
+      font-size: 10px;
+      border: 1px solid $base-gray;
+      color: $dark-gray;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: $shadow-gray;
+    }
+
+    & .actions {
+      display: flex;
+      justify-content: space-between;
+
+      & span {
+        cursor: pointer;
+        margin: 0 5px;
+        align-self: center;
+      }
+
+      & .active {
+        font-weight: bold;
+      }
+
+      div > span:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .main {
+    & .card {
+      width: 90%;
+
+      & .box {
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          font-size: 13px;
+        }
+      }
+    }
+
+    & .subCard {
+      width: 89.5%;
+    }
+
+    & .filters {
+      flex-direction: column;
+      width: 89%;
+
+      & button {
+        min-height: 30px;
+        font-size: 13px;
+      }
+
+      & .actions {
+        min-height: 40px;
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    width: 100%;
+
+    & .card {
+      width: 90%;
+    }
+    & .subCard {
+      width: 90%;
+    }
+  }
+}
