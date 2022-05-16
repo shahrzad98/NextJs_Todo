@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { QueryClientProvider } from "react-query";
 import queryClient from "../config/queryClient";
+import { nationalCodeEvaluator } from "../utils";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
